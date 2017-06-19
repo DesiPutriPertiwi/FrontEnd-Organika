@@ -1,0 +1,56 @@
+<ion-content class="regis-page" padding>
+	<div class="logo">
+		<img src="assets/icon/organisasi2.jpg" alt="Organika Logo">
+	</div>
+
+	<form #registrasiForm="ngForm" novalidate>
+		<ion-list no-lines>
+			<ion-item>
+				<ion-label stacked color="primary">
+					Nama Lengkap
+				</ion-label>
+				<ion-input [(ngModel)]="user.nama" placeholder="Nama lengkap" name="nama" type="text" #nama="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]=" submitted== false" color="danger" padding-left>
+				Silahkan isi Nama Lengkap 
+			</p>
+
+			<ion-item>
+				<ion-label stacked color="primary">
+					Tanggal Lahir
+				</ion-label>
+				<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" name="tll"  ></ion-datetime>
+			</ion-item>
+			<p ion-text [hidden]="submitted== false" color="danger" padding-left>
+				Silahkan pilih Tanggal Lahir
+			</p> 
+
+			<ion-item>
+				<ion-label stacked color="primary">
+					Email
+				</ion-label>
+				<ion-input [(ngModel)]="user.email" placeholder="Email" name="email" type="email" #email="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="submitted== false" color="danger" padding-left>
+				Silahkan isi Email 
+			</p>
+			
+			<ion-item>
+				<ion-label stacked color="primary">
+					Password
+				</ion-label>
+				<ion-input [(ngModel)]="user.password" placeholder="Password" name="password" type="password" #password="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]=" submitted== false" color="danger" padding-left>
+				Silahkan isi Password 
+			</p> 
+
+		</ion-list>
+		<div padding>
+			<button ion-button (click)="onSignup()">Daftar</button>
+		</div>
+	</form>
+</ion-content>

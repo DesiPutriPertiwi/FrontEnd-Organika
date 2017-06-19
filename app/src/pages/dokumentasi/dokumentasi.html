@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dokumentasi</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label stacked color="primary">Nama Kegiatan</ion-label>
+       <ion-input [(ngModel)]="namakegiatan" placeholder="Masukkan Nama Kegiatan" name="message" #message="ngModel" required></ion-input>
+    </ion-item>
+    <p ion-text [hidden]="message.valid || submitted === false" color="danger" padding-left>
+      Nama Kegiatan is required
+      </p>
+   
+    <ion-item>
+      <ion-label stacked color="primary">Tanggal</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="month"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked color="primary">Keterangan</ion-label>
+        <ion-textarea [(ngModel)]="keterangan" placeholder="Masukkan Keterangan" name="message"#message="ngModel" rows="3" required ></ion-textarea>
+      </ion-item>
+      <p ion-text [hidden]="message.valid || submitted === false" color="danger" padding-left>
+        Keterangan is required
+      </p>
+    <ion-item>
+      <ion-label stacked color="primary">Upload Gambar</ion-label>
+        <button ion-button outline item-right icon-left (click)="uploadPicture()">upload gambar</button>
+    </ion-item>
+     <!--<img [src]="'data:image/jpeg;base64,'+ picture"> <-->
+  
+  </ion-list>
+
+  <div padding>
+      <button ion-button type="submit" block>Kirim</button>
+    </div>
+
+</ion-content>
