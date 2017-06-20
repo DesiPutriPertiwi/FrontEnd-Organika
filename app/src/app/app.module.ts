@@ -16,7 +16,8 @@ import { EditKeluarPage} from '../pages/edit-keluar/edit-keluar';
 import { Camera } from '@ionic-native/camera';
 import { LaporanPage } from '../pages/laporan/laporan';
 import { DokumentasiPage } from '../pages/dokumentasi/dokumentasi';
-
+import { TabLaporanPage } from '../pages/tab-laporan/tab-laporan'
+;
 @NgModule({
   declarations: [
     MyApp,
@@ -31,6 +32,7 @@ import { DokumentasiPage } from '../pages/dokumentasi/dokumentasi';
     EditKeluarPage,
     LaporanPage,
     DokumentasiPage,
+    TabLaporanPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -49,6 +51,7 @@ import { DokumentasiPage } from '../pages/dokumentasi/dokumentasi';
     EditKeluarPage,
     LaporanPage,
     DokumentasiPage,
+    TabLaporanPage,
   ],
   providers: [
     {provide: Storage, useClass: IonicErrorHandler}, 

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { LaporanPage} from '../laporan/laporan';
+import { DokumentasiPage} from '../dokumentasi/dokumentasi';
 
 /*
   Generated class for the TabLaporan page.
@@ -15,8 +17,11 @@ export class TabLaporanPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TabLaporanPage');
+  goToDokumentasi(){
+      this.navCtrl.push(DokumentasiPage);
   }
 
+  goToKeuangan(){
+      this.navCtrl.push(LaporanPage);
+  }
 }

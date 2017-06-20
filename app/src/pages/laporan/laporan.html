@@ -38,13 +38,11 @@
         <ion-label stacked color="primary">Keterangan</ion-label>
         <ion-textarea [(ngModel)]="keterangan" placeholder="Masukkan Keterangan" name="message"#message="ngModel" rows="3" required ></ion-textarea>
       </ion-item>
-      <p ion-text [hidden]="message.valid || submitted === false" color="danger" padding-left>
-        Keterangan is required
-      </p>
+      <p ion-text [hidden]="message.valid || submitted === false" color="danger" padding-left>Keterangan is required</p>
   </ion-list>
 
   <div padding>
       <button ion-button type="submit" block>Kirim</button>
-    </div>
+  </div>
 
 </ion-content>
