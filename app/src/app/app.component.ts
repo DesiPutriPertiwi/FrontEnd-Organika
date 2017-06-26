@@ -5,14 +5,12 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 //import { MulaiPage } from '../pages/mulai/mulai';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
-//import { RegistrasiPage } from '../pages/registrasi/registrasi';
-import { DokumentasiPage} from '../pages/dokumentasi/dokumentasi';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = LoginPage;
+  rootPage = TabsPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

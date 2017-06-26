@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PopoverController , ActionSheetController} from 'ionic-angular';
 import { Camera} from '@ionic-native/camera';
 import { NavController } from 'ionic-angular';
+import { TabLaporanPage } from '../tab-laporan/tab-laporan';
 
 @Component({
   selector: 'page-laporan',
@@ -61,4 +62,9 @@ uploadPicture() {
     	}, (err) => {
     });
   }
-    }
+
+  uploadLaporan(){
+    this.submitted= true;
+    this.navCtrl.push(TabLaporanPage);
+  }
+}
