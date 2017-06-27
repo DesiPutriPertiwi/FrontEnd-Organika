@@ -1,4 +1,10 @@
 <ion-content>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+  	</ion-navbar>
+
 	<div class="logo">
 		<img src="assets/icon/organisasi2.jpg" alt="Organika Logo">
 	</div>
@@ -34,12 +40,10 @@
 
 			<ion-row responsive-sm>
 				<ion-col>
-					<button ion-button (click)="onSignup()" type="submit" block>Daftar</button>
+					<button ion-button (click)="onDaftar()" type="submit" block>Daftar</button>
 				</ion-col>
 			</ion-row>
 
 		</form>
 	</div>
 </ion-content>
-
-

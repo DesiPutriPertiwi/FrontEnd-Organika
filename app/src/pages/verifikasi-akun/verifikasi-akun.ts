@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, App, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { NavController, App, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import { Auth } from '../../providers/auth';
 import { LoginPage} from '../login/login';
@@ -27,6 +27,7 @@ export class VerifikasiAkunPage {
     public http: Http,
     public app: App,
     public toastCtrl: ToastController,
+    public alertCtrl: AlertController,
     public loadCtrl: LoadingController) {
       let data = this.navParams.data;
       //this.username = data.username.data;
@@ -35,24 +36,14 @@ export class VerifikasiAkunPage {
   login(){
     this.app.getRootNav().setRoot(LoginPage);
   }
-  reSendVerivication(){
-    let loading = this.loadCtrl.create({
-      content: 'Tunggu sebentar...'
+
+  reSendVerifikasi(){
+    let alert = this.alertCtrl.create({
+         title: 'Verifikasi Ulang',
+         subTitle: 'Pengiriman verifikasi ulang sukses, silahkan masuk ke email Anda untuk verifikasi. Kemudian coba login dengan email dan password yang didaftarkan',
+         buttons: ['OK']
     });
-    loading.present();
-    let input = JSON.stringify({
-      email: this.email
-    });
-    this.http.post(this.auth.BASE_URL+"user/email/validate/resend", input, this.options).subscribe(data=>{
-      loading.dismiss();
-      let response =data.json();
-      if(response.status == 200){
-        this.showAlert("Sukses mengirimkan verifikasi ke email Anda");
-      }
-    }, err => {
-      loading.dismiss();
-      this.showError(err);
-    });
+    alert.present();
   }
 
   showError(err: any){

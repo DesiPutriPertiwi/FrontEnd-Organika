@@ -38,34 +38,9 @@ export class RegistrasiPage {
    //  this.user.role = type;
    }
 
-  onSignup(/*form: NgForm*/){
+  onDaftar(form: NgForm) {
     this.submitted = true;
-    let loading = this.loadCtrl.create({
-      content: 'Tunggu sebentar...'
-    });
     this.navCtrl.push(VerifikasiAkunPage);
-    /*if(form.valid){
-      loading.present();
-      let input = JSON.stringify({
-        namapanjang: this.user.nama,
-        tanggallahir: this.user.myDate,
-        email: this.user.email,
-        password: this.user.password,
-       // role: this.user.role,
-        login_type : 1
-      });
-      this.http.post(this.auth.BASE_URL+"user/email/validate/resend",input,this.options).subscribe(data => {
-        loading.dismiss();
-        let response = data.json();
-        if(response.status == 200){
-          this.navCtrl.setRoot(VerifikasiAkunPage, response.data);
-        }
-        this.showAlert(response.massage);
-      }, err => {
-        loading.dismiss();
-        this.showError(err);
-      });
-    }*/
   }
 
   showError(err: any){
