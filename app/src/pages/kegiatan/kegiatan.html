@@ -7,14 +7,56 @@
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon name="contact"></ion-icon>
     </button>
     <ion-title>Kegiatan</ion-title>
   </ion-navbar>
+
+    <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="pet">
+        <ion-segment-button value="Umum">Umum</ion-segment-button>
+        <ion-segment-button value="Pribadi">Pribadi</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+  <!--ion-navbar color= "prymary">
+    <ion-title> {{ViewTitle}}</ion-title>
+    <ion-button end>
+      <button ion-button[disabled]="isToday"(click)="today()">Today</button>
+      <button ion-button (click)="changeMode('month')">M</button>
+      <button ion-button (click)="changeMode('week')">W</button>
+      <button ion-button (click)="changeMode('day')">D</button>
+      <button ion-button (click)="loadEvents()">Load Events</button>
+    </ion-button>
+  </ion-navbar-->
 </ion-header>
 
+<!--ion-content class="has-header">
+  <calendar [eventSource]="eventSource"
+  [calendarMode]="calendar.mode"
+  [currentDate]="calendar.currentDate"
+  (onCurrentDateChanged)="onCurrentDateChanged($event)"
+  (onEventSelected)="onEventSelected($event)"
+  (onTitleChanged)="onViewTitleChanged($event)"
+  (onTimeSelected)="onTimeSelected($event)"
+  step= "30">
+  </calendar>
+</ion-content-->
 
+<ion-content>
+      <div [ngSwitch]="pet">
+        <ion-list *ngSwitchCase=" 'Umum' ">
+            <ion-fab right bottom>
+              <button ion-fab (click)="goToUmum()"><ion-icon name="create"></ion-icon></button>
+            </ion-fab>
+        </ion-list>
 
-<ion-content padding>
+        <ion-list *ngSwitchCase=" 'Pribadi' ">
+            <ion-fab right bottom>
+                  <button ion-fab (click)="goToPribadi()"><ion-icon name="create"></ion-icon></button>
+            </ion-fab>
+        </ion-list>
+    </div>
 
+    
 </ion-content>
