@@ -18,6 +18,8 @@ import { LaporanPage } from '../pages/laporan/laporan';
 import { DokumentasiPage } from '../pages/dokumentasi/dokumentasi';
 import { TabLaporanPage } from '../pages/tab-laporan/tab-laporan';
 import { VerifikasiAkunPage} from'../pages/verifikasi-akun/verifikasi-akun';
+//import { NgCalendarModule} from 'ionic2-calendar'
+
 @NgModule({
   declarations: [
     MyApp,
@@ -36,6 +38,7 @@ import { VerifikasiAkunPage} from'../pages/verifikasi-akun/verifikasi-akun';
     VerifikasiAkunPage,
   ],
   imports: [
+  //  NgCalendarModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

@@ -4,78 +4,27 @@
 
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title>Akun</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content class="outer-content">
 
+
     <ion-list>
-      <ion-list-header>
-        Menu Navigasi
-      </ion-list-header>
+      <div padding-top text-center>
+        <div class="profilePict">
+          <img src="assets/icon/user.png" *ngIf="!profilePicture">
+          <img [src]="profilePicture" *ngIf="profilePicture">
+        </div> 
+      </div>
       <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
         <ion-icon item-left [name]="p.icon"></ion-icon>
         {{p.title}}
       </button>
     </ion-list>
 
-    <ion-list>
-      <ion-list-header>
-        Akun
-      </ion-list-header>
-      <button ion-item menuClose *ngFor="let p of loggedOutPages" (click)="openPage(p)">
-        <ion-icon item-left [name]="p.icon"></ion-icon>
-        {{p.title}}
-      </button>
-    </ion-list>
-
-    <ion-list>
-      <ion-list-header>
-        Logout
-      </ion-list-header>
-      <button ion-item menuClose *ngFor="let p of logOut" (click)="openPage(p)">
-        <ion-icon item-left [name]="p.icon"></ion-icon>
-        {{p.title}}
-      </button>
-    </ion-list>
-  </ion-content>
-
-</ion-menu>
-
-<!-- logged in menu -->
-<ion-menu id="loggedInMenu" [content]="content">
-
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content class="outer-content">
-
-    <ion-list>
-      <ion-list-header>
-        Menu Navigasi
-      </ion-list-header>
-      <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
-        <ion-icon item-left [name]="p.icon"></ion-icon>
-        {{p.title}}
-      </button>
-    </ion-list>
-
-    <ion-list>
-      <ion-list-header>
-        Akun Saya
-      </ion-list-header>
-      <button ion-item menuClose *ngFor="let p of loggedInPages" (click)="openPage(p)">
-        <ion-icon item-left [name]="p.icon"></ion-icon>
-        {{p.title}}
-      </button>
-    </ion-list>
-
-  </ion-content>
-
+ </ion-content>
 </ion-menu>
 
 
