@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController, ActionSheetController } from 'ionic-angular';
 import { Http } from '@angular/http';
-/*
-  Generated class for the Beranda page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
-
+import { TambahBerandaPage} from '../tambah-beranda/tambah-beranda';
 
 @Component({
   selector: 'page-beranda',
@@ -88,5 +82,7 @@ export class BerandaPage {
 
     this.httpErr = true;
   }
-
+  goToBeranda(){
+    this.navCtrl.push(TambahBerandaPage);
+  }
 }

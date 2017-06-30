@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Rencana Kegiatan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked color="primary">Jenis</ion-label>
+        <ion-select [(ngModel)]="jenis">
+          <ion-option value="Kadiv">Kadiv</ion-option>
+          <ion-option value="Anggota Divisi">Anggota Divisi</ion-option>
+          <ion-option value="umum">Umum</ion-option>
+        </ion-select>
+    </ion-item>
+   
+    <ion-item>
+      <ion-label stacked color="primary">Tanggal</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="month" placeholder="MMM DD YYYY" ></ion-datetime>
+    </ion-item>
+ 
+    <ion-item>
+        <ion-label stacked color="primary">Tempat</ion-label>
+        <ion-input type="text" placeholder="Tempat"  ></ion-input>
+    </ion-item>
+  
+    <ion-item>
+        <ion-label stacked color="primary">Catatan</ion-label>
+        <ion-textarea [(ngModel)]="catatan" placeholder="Masukkan Catatan" name="message"#message="ngModel" rows="3" required ></ion-textarea>
+      </ion-item>
+      <p ion-text [hidden]="message.valid || submitted === false" color="danger" padding-left>Keterangan is required</p>
+  </ion-list>
+
+  <div padding>
+      <button ion-button type="submit" block (click)="uploadLaporan()">Kirim</button>
+  </div>
+
+</ion-content>

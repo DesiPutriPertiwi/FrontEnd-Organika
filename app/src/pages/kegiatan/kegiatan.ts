@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { LaporanPage} from '../laporan/laporan';
 import { DokumentasiPage} from '../dokumentasi/dokumentasi';
+import { KegiatanPribadiPage} from '../kegiatan-pribadi/kegiatan-pribadi';
+import { KegiatanUmumPage} from '../kegiatan-umum/kegiatan-umum';
 
 
 @Component({
@@ -98,11 +100,12 @@ export class KegiatanPage {
     return date < current;
   };*/
 
+
   goToUmum(){
-      this.navCtrl.push(DokumentasiPage);
+      this.navCtrl.push(KegiatanUmumPage);
   }
 
   goToPribadi(){
-      this.navCtrl.push(LaporanPage);
+      this.navCtrl.push(KegiatanPribadiPage);
   }
 }
