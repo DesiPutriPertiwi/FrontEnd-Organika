@@ -17,7 +17,7 @@ export class TabsPage {
   // set the root pages for each tab
   tab1Root: any = BerandaPage;
   tab2Root: any = KegiatanPage;
-  tab3Root: any = UndanganPage;
+  tab3Root: any = ProfilPage;
   tab4Root: any = TabLaporanPage;
   mySelectedIndex: number;
 
