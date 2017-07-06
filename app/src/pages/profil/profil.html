@@ -19,13 +19,44 @@
 		  <img [src]="profilePict" *ngIf="profilePict">
     </div>
 	    <!--h2>{{nama}}</h2-->
-	  <button ion-item (click)="editFoto()" >
+	  <button (click)="editFoto()" >
 				<div class="editFoto">
 					<ion-icon name="camera"> </ion-icon>
 				</div>
 		</button>
+    <button (click)="editProfil()" >
+				<div class="editFoto">
+					<ion-icon name="create"> </ion-icon>
+				</div>
+		</button>
 	</div>
 
+  	<form #updateForm="ngForm" novalidate>
+		<ion-list no-lines>
+			<ion-item>
+				<ion-label stacked color="primary" class="labelEdit">Nama Lengkap</ion-label>
+				<ion-input [(ngModel)]="user.name" name="nama" type="text" #nama="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<!--p ion-text [hidden]="nama.valid || submitted == false" color="danger" padding-left>
+				Nama lengkap harus diisi
+			</p-->
+
+			<ion-item>
+				<ion-label stacked color="primary" class="labelEdit">Tanggal Lahir</ion-label>
+				<!--ion-input [(ngModel)]="user.username" name="username" type="text" #username="ngModel" required>
+				</ion-input-->
+			</ion-item>
+			<!--p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+				Username harus diisi
+			</p-->
+			<ion-item>
+				<ion-label stacked color="primary" class="labelEdit">Email</ion-label>
+				<!--ion-input [(ngModel)]="user.email" disabled name="email" type="email" #email="ngModel" required >
+				</ion-input-->
+			</ion-item>
+		</ion-list>
+	</form>
 		
 </ion-content>
 
