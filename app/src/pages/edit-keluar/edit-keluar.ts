@@ -30,8 +30,8 @@ ionViewWillEnter(){
   });
 }
   logout() {
-    this.auth.logout();
-    this.app.getRootNav().setRoot(LoginPage);
+    const root = this.app.getRootNav();
+    root.popToRoot(LoginPage);
     this.viewCtrl.dismiss();
   }
 /*  gantiPassword(){

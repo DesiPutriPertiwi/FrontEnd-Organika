@@ -8,7 +8,6 @@
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
@@ -32,33 +31,25 @@
 	</div>
 
   	<form #updateForm="ngForm" novalidate>
-		<ion-list no-lines>
+		<ion-list >
 			<ion-item>
-				<ion-label stacked color="primary" class="labelEdit">Nama Lengkap</ion-label>
-				<ion-input [(ngModel)]="user.name" name="nama" type="text" #nama="ngModel" required>
+				<ion-label stacked color="primary" >Nama Lengkap</ion-label>
+				<ion-input [(ngModel)]="user.name" disabled name="name" type="text" #name="ngModel" required >
 				</ion-input>
 			</ion-item>
-			<!--p ion-text [hidden]="nama.valid || submitted == false" color="danger" padding-left>
-				Nama lengkap harus diisi
-			</p-->
 
 			<ion-item>
-				<ion-label stacked color="primary" class="labelEdit">Tanggal Lahir</ion-label>
-				<!--ion-input [(ngModel)]="user.username" name="username" type="text" #username="ngModel" required>
-				</ion-input-->
+				<ion-label stacked color="primary" >Tanggal Lahir</ion-label>
+				<ion-input [(ngModel)]="user.ttl" disabled name="ttl" type="text" #ttl="ngModel" required >
+				</ion-input>
 			</ion-item>
-			<!--p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
-				Username harus diisi
-			</p-->
+
 			<ion-item>
-				<ion-label stacked color="primary" class="labelEdit">Email</ion-label>
-				<!--ion-input [(ngModel)]="user.email" disabled name="email" type="email" #email="ngModel" required >
-				</ion-input-->
+				<ion-label stacked color="primary" >Email</ion-label>
+				<ion-input [(ngModel)]="user.email" disabled name="email" type="email" #email="ngModel" required >
+				</ion-input>
 			</ion-item>
 		</ion-list>
 	</form>
 		
 </ion-content>
-
-
-

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ViewController, ActionSheetController, LoadingController, NavController, ToastController, AlertController, NavParams,App, PopoverController } from 'ionic-angular';
 import { Auth } from '../../providers/auth';
 import { LoginPage } from '../login/login';
-//import { EditProfilPage } from '../edit-profil/edit-profil';
+import { EditProfilPage } from '../edit-profil/edit-profil';
 import { Storage } from '@ionic/storage';
 import { EditKeluarPage } from '../edit-keluar/edit-keluar';
 import { Camera} from '@ionic-native/camera';
@@ -14,7 +14,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: 'profil.html'
 })
 export class ProfilPage {
-	user: {user_id?: string, username?: string, name?: string, email?: string, picture?: string, password?: string,  role?: string} = {};
+	user: {user_id?: string, ttl?: string, name?: string, email?: string, picture?: string, password?: string,  role?: string} = {};
   nama : string;
   base64Image: string;
   profilePict: string;
@@ -43,7 +43,7 @@ export class ProfilPage {
     this.getName();
     this.getProfilePict();
     this.auth.getData().then((value)=>{
-      this.user.username = value.username;
+      this.user.ttl = value.ttl;
       this.user.name = value.name;
       this.user.email = value.email;
       this.user.user_id = value.user_id;
@@ -66,11 +66,12 @@ export class ProfilPage {
       this.profilePict = values;
     });
   }
-  /*editProfile(){
-    this.nav.push(ProfileEditPage);
-  }*/
-
-editFoto() {
+  
+  editProfil(){
+   this.navCtrl.push(EditProfilPage);
+  }
+  
+  editFoto() {
     let actionSheet = this.actionSheetCtrl.create({
       title: 'Pilihan',
       buttons: [
@@ -137,10 +138,6 @@ editFoto() {
         this.showError(err);
     });
     */
-  }
-
-  editProfil(){
-   // this.navCtrl.push(EditProfilPage);
   }  
 
   onUpdate(form: NgForm) {
@@ -152,7 +149,7 @@ editFoto() {
     	loading.present();
       let param = JSON.stringify({
      	  user_id : this.user.user_id,
-        username : this.user.username,
+        ttl : this.user.ttl,
         name : this.user.name,
         email : this.user.email,
         password: this.user.password

@@ -10,6 +10,7 @@ import { ProfilPage} from '../pages/profil/profil';
 import { GantipaswordPage} from '../pages/gantipasword/gantipasword';
 
 
+
 export interface PageInterface {
   title: string;
   name: string;
@@ -27,11 +28,11 @@ export interface PageInterface {
 export class MyApp {
   rootPage = LoginPage;
 
-  //@ViewChild(Nav) nav: Nav;
+  @ViewChild(Nav) nav: Nav;
 
   appPages: PageInterface[] = [
     { title: 'Profil', name: 'Tabs', component: TabsPage, tabComponent: ProfilPage, index: 0, icon: 'people' },
-    { title: 'Ganti Passwort', name: 'Tabs', component: TabsPage, tabComponent: GantipaswordPage, index: 1, icon: 'key' },
+    { title: 'Ganti Password', name: 'Tabs', component: TabsPage, tabComponent: GantipaswordPage, index: 1, icon: 'key' },
     { title: 'Logout', name: 'Tabs', component: TabsPage, tabComponent: LoginPage, index: 2, icon: 'log-out',logsOut: true },
   ];
 
@@ -51,6 +52,22 @@ export class MyApp {
     }
 
     openPage(page: PageInterface) {
+      let params = {};
+
+      if (page.index) {
+        params = { tabIndex: page.index };
+      }
+
+      if (this.nav.getActiveChildNav() && page.index != undefined) {
+          this.nav.getActiveChildNav().select(page.index);
+        // Set the root of the nav with params if it's a tab index
+      } else {
+          this.nav.setRoot(page.name, params).catch((err: any) => {
+            console.log(`Didn't set nav root: ${err}`);
+          });
+      }
+
+
       if (page.logsOut === true) {
        // this.auth.logout();
         const root = this.app.getRootNav();

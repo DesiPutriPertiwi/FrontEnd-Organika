@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, PopoverController} from 'ionic-angular';
 import { LaporanPage} from '../laporan/laporan';
 import { DokumentasiPage} from '../dokumentasi/dokumentasi';
 import { KegiatanPribadiPage} from '../kegiatan-pribadi/kegiatan-pribadi';
 import { KegiatanUmumPage} from '../kegiatan-umum/kegiatan-umum';
-
+import { EditKeluarPage } from '../edit-keluar/edit-keluar';
 
 @Component({
   selector: 'page-kegiatan',
@@ -20,7 +20,10 @@ export class KegiatanPage {
     currentDate: new Date()
   };*/
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(
+    public navCtrl: NavController, 
+    public popoverCtrl: PopoverController,
+    public navParams: NavParams) {}
 /*
   ionViewDidLoad() {
     console.log('ionViewDidLoad KegiatanPage');
@@ -99,7 +102,10 @@ export class KegiatanPage {
     current.setHours(0,0,0);
     return date < current;
   };*/
-
+  presentPopover(event: Event) {
+    let popover = this.popoverCtrl.create(EditKeluarPage);
+    popover.present({ ev: event });
+  }
 
   goToUmum(){
       this.navCtrl.push(KegiatanUmumPage);

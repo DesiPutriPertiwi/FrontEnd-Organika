@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams,PopoverController } from 'ionic-angular';
 import { LaporanPage} from '../laporan/laporan';
 import { DokumentasiPage} from '../dokumentasi/dokumentasi';
-
+import { EditKeluarPage } from '../edit-keluar/edit-keluar';
 /*
   Generated class for the TabLaporan page.
 
@@ -15,7 +15,15 @@ import { DokumentasiPage} from '../dokumentasi/dokumentasi';
 })
 export class TabLaporanPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(
+    public navCtrl: NavController, 
+    public popoverCtrl: PopoverController,
+    public navParams: NavParams) {}
+
+  presentPopover(event: Event) {
+    let popover = this.popoverCtrl.create(EditKeluarPage);
+    popover.present({ ev: event });
+  }
 
   goToDokumentasi(){
       this.navCtrl.push(DokumentasiPage);

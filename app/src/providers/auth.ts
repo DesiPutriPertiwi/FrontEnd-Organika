@@ -36,22 +36,23 @@ export class Auth {
     }
   };
 
-  login(username: string): void {
+  login(data: string) {
     this.storage.set(this.HAS_LOGGED_IN, true);
-    this.setUsername(username);
+    this.storage.set('username', data);
     this.events.publish('user:login');
   };
 
-  signup(username: string): void {
+  signup(data: string) {
     this.storage.set(this.HAS_LOGGED_IN, true);
-    this.setUsername(username);
+    this.storage.set('username', data);
     this.events.publish('user:signup');
   };
 
-  logout(): void {
+  logout() {
     this.storage.remove(this.HAS_LOGGED_IN);
     this.storage.remove('username');
     this.storage.remove('token');
+    this.storage.remove('komoditas');
     this.events.publish('user:logout');
   };
 
