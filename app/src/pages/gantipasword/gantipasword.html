@@ -19,33 +19,26 @@
 
 <ion-content padding>
   <form #updateForm="ngForm" novalidate>
-		<ion-list no-lines>
+		<ion-list>
 			<ion-item>
 				<ion-label stacked color="primary">Password Lama</ion-label>
 				<ion-input [(ngModel)]="oldPassword" name="oldPass" type="password" #oldPass="ngModel" required>
 				</ion-input>
 			</ion-item>
-			<p ion-text [hidden]="oldPass.valid || submitted == false" color="danger" padding-left>
-				This field is required
-			</p>
 
 			<ion-item>
 				<ion-label stacked color="primary">Password Baru</ion-label>
 				<ion-input [(ngModel)]="newPassword" name="newPass" type="password" #newPass="ngModel" required>
 				</ion-input>
 			</ion-item>
-			<p ion-text [hidden]="newPass.valid || submitted == false" color="danger" padding-left>
-				This field is required
-			</p>
+
 
 			<ion-item>
 				<ion-label stacked color="primary">Masukkan Ulang Password Baru</ion-label>
 				<ion-input [(ngModel)]="reTypePassword" name="reTypePass" type="password" #reTypePass="ngModel" required>
 				</ion-input>
 			</ion-item>
-			<p ion-text [hidden]="reTypePass.valid || submitted == false" color="danger" padding-left>
-				This field is required
-			</p>
+
 			<p ion-text *ngIf="reTypePassword == newPassword && reTypePass.valid" color="secondary" padding-left>
 				Password match
 			</p>
