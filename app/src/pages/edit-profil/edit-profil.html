@@ -27,18 +27,21 @@
 			</ion-item>
 
 			<ion-item>
-				<ion-label stacked color="primary">Password</ion-label>
-				<!--button ion-item (click)="gantiPass()"-->
-					<ion-input [(ngModel)]="user.password" disabled name="password" type="password" #password="ngModel" required>
-					</ion-input>
-				<!--/button-->
-			</ion-item>
-		
-			<ion-item>
 				<ion-label stacked color="primary">Email</ion-label>
 				<ion-input [(ngModel)]="user.email" disabled name="email" type="email" #email="ngModel" required >
 				</ion-input>
+
 			</ion-item>
+			
+		</ion-list>
+
+		<ion-list>
+				
+				<button ion-item (click)="gantiPass()">
+				<ion-label stacked color="primary">Password</ion-label>
+					<ion-input [(ngModel)]="user.password" disabled name="password" type="password" #password="ngModel" required>
+					</ion-input>
+				</button>
 
 		</ion-list>
 	</form>

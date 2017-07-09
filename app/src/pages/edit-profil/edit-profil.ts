@@ -82,6 +82,5 @@ export class EditProfilPage {
   }
   gantiPass(){
     this.navCtrl.push(GantipaswordPage);
-    this.viewCtrl.dismiss();
   }
 }
