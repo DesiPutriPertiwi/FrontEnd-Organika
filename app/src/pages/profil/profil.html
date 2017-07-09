@@ -49,6 +49,19 @@
 				<ion-input [(ngModel)]="user.email" disabled name="email" type="email" #email="ngModel" required >
 				</ion-input>
 			</ion-item>
+
+			<ion-item>
+				<ion-label stacked color="primary" >Nama Organisasi</ion-label>
+				<ion-input [(ngModel)]="organisasi.nama_organisasi" disabled name="n_organisasi" type="text" #n_organisasi="ngModel" required >
+				</ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label stacked color="primary" >Status Keanggotaan</ion-label>
+				<ion-input [(ngModel)]="keanggotaan.level" disabled name="level" type="text" #level="ngModel" required >
+				</ion-input>
+			</ion-item>
+			
 		</ion-list>
 	</form>
 		

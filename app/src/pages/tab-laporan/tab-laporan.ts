@@ -14,6 +14,8 @@ import { EditKeluarPage } from '../edit-keluar/edit-keluar';
   templateUrl: 'tab-laporan.html'
 })
 export class TabLaporanPage {
+  eventSource;
+  viewTitle;
 
   constructor(
     public navCtrl: NavController, 

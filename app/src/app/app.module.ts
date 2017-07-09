@@ -23,6 +23,7 @@ import { KegiatanPribadiPage} from'../pages/kegiatan-pribadi/kegiatan-pribadi';
 import { KegiatanUmumPage} from'../pages/kegiatan-umum/kegiatan-umum';
 import {TambahBerandaPage } from '../pages/tambah-beranda/tambah-beranda';
 import { EditProfilPage} from '../pages/edit-profil/edit-profil';
+import { GantipaswordPage} from '../pages/gantipasword/gantipasword';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { EditProfilPage} from '../pages/edit-profil/edit-profil';
     KegiatanUmumPage,
     TambahBerandaPage,
     EditProfilPage,
+    GantipaswordPage,
   ],
   imports: [
   //  NgCalendarModule,
@@ -69,6 +71,7 @@ import { EditProfilPage} from '../pages/edit-profil/edit-profil';
     KegiatanUmumPage,
     TambahBerandaPage,
     EditProfilPage,
+    GantipaswordPage,
   ],
   providers: [
     {provide: Storage, useClass: IonicErrorHandler}, 

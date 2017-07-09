@@ -34,8 +34,5 @@ ionViewWillEnter(){
     root.popToRoot(LoginPage);
     this.viewCtrl.dismiss();
   }
-/*  gantiPassword(){
-    this.navCtrl.push(GantiPasswordPage);
-    this.viewCtrl.dismiss();
-  }*/
+
 }

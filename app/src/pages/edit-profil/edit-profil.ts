@@ -3,6 +3,7 @@ import { ViewController, ActionSheetController, LoadingController, NavController
 import { Auth } from '../../providers/auth';
 import { NgForm} from '@angular/forms';
 import { Storage } from '@ionic/storage';
+import { GantipaswordPage} from '../gantipasword/gantipasword';
 
 /*
   Generated class for the EditProfil page.
@@ -79,5 +80,8 @@ export class EditProfilPage {
 
     }
   }
-
+  gantiPass(){
+    this.navCtrl.push(GantipaswordPage);
+    this.viewCtrl.dismiss();
+  }
 }

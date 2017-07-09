@@ -13,7 +13,7 @@
 
 <ion-content padding>
 	<form #updateForm="ngForm" novalidate>
-		<ion-list no-lines>
+		<ion-list>
 			<ion-item>
 				<ion-label stacked color="primary">Nama Lengkap</ion-label>
 				<ion-input [(ngModel)]="user.name" name="name" type="text" #name="ngModel" required>
@@ -28,8 +28,10 @@
 
 			<ion-item>
 				<ion-label stacked color="primary">Password</ion-label>
-				<ion-input [(ngModel)]="user.password" disabled name="password" type="password" #password="ngModel" required>
-				</ion-input>
+				<!--button ion-item (click)="gantiPass()"-->
+					<ion-input [(ngModel)]="user.password" disabled name="password" type="password" #password="ngModel" required>
+					</ion-input>
+				<!--/button-->
 			</ion-item>
 		
 			<ion-item>
@@ -37,6 +39,7 @@
 				<ion-input [(ngModel)]="user.email" disabled name="email" type="email" #email="ngModel" required >
 				</ion-input>
 			</ion-item>
+
 		</ion-list>
 	</form>
 </ion-content>

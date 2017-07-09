@@ -12,6 +12,9 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'undangan.html'
 })
 export class UndanganPage {
+  organisasi: {nama_organisasi?:string} ={};
+  keanggotaan: {level?: string, divisi_id_divisi?:number}={};
+  user: {user_id?: string, ttl?: string, name?: string, email?: string, picture?: string, password?: string,   role?: string} = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 

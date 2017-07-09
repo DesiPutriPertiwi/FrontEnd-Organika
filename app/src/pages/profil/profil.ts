@@ -14,7 +14,9 @@ import { NgForm } from '@angular/forms';
   templateUrl: 'profil.html'
 })
 export class ProfilPage {
-	user: {user_id?: string, ttl?: string, name?: string, email?: string, picture?: string, password?: string,  role?: string} = {};
+	user: {user_id?: string, ttl?: string, name?: string, email?: string, picture?: string, password?: string,   role?: string} = {};
+  keanggotaan :{ level?:string}={};
+  organisasi : { nama_organisasi?:string} ={}
   nama : string;
   base64Image: string;
   profilePict: string;
@@ -49,8 +51,9 @@ export class ProfilPage {
       this.user.user_id = value.user_id;
       this.user.picture = value.picture;
       this.user.role = value.role;
+      this.keanggotaan.level = value.level;
+      this.organisasi.nama_organisasi = value.nama_organisasi;
     });
-
   }
   presentPopover(event: Event) {
     let popover = this.popoverCtrl.create(EditKeluarPage);
