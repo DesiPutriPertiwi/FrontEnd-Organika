@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Http,Headers,RequestOptions } from '@angular/http';
-import { NavController } from 'ionic-angular';
+import { NavController,LoadingController } from 'ionic-angular';
 
 import { Auth } from '../../providers/auth';
 
@@ -25,10 +25,15 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController, 
     public auth: Auth,
-    public http: Http) { }
+    public http: Http,
+    public loadCtrl: LoadingController
+    ) { }
 
   onLogin(form: NgForm) {
     this.submitted = true;
+    let loading = this.loadCtrl.create({
+        content: 'Tunggu sebentar...'
+    });
 
    /* if (form.valid) {
       // this.auth.login(this.login.username);

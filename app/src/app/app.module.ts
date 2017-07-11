@@ -12,6 +12,7 @@ import { LoginPage } from '../pages/login/login';
 import { Auth } from '../providers/auth';
 import { Storage } from '@ionic/storage';
 import { RegistrasiPage} from '../pages/registrasi/registrasi';
+import { RegistrasiAnggotaPage} from '../pages/registrasi-anggota/registrasi-anggota';
 import { EditKeluarPage} from '../pages/edit-keluar/edit-keluar';
 import { Camera } from '@ionic-native/camera';
 import { LaporanPage } from '../pages/laporan/laporan';
@@ -24,6 +25,7 @@ import { KegiatanUmumPage} from'../pages/kegiatan-umum/kegiatan-umum';
 import {TambahBerandaPage } from '../pages/tambah-beranda/tambah-beranda';
 import { EditProfilPage} from '../pages/edit-profil/edit-profil';
 import { GantipaswordPage} from '../pages/gantipasword/gantipasword';
+import {VerifikasiAnggotaPage} from '../pages/verifikasi-anggota/verifikasi-anggota';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { GantipaswordPage} from '../pages/gantipasword/gantipasword';
     TambahBerandaPage,
     EditProfilPage,
     GantipaswordPage,
+    RegistrasiAnggotaPage,
+    VerifikasiAnggotaPage,
   ],
   imports: [
   //  NgCalendarModule,
@@ -72,6 +76,8 @@ import { GantipaswordPage} from '../pages/gantipasword/gantipasword';
     TambahBerandaPage,
     EditProfilPage,
     GantipaswordPage,
+    RegistrasiAnggotaPage,
+    VerifikasiAnggotaPage,
   ],
   providers: [
     {provide: Storage, useClass: IonicErrorHandler}, 

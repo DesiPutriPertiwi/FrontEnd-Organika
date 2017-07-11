@@ -26,8 +26,8 @@
         <p> Memuat data... </p>
     </div>
     -->
-    <div [ngSwitch]="pet">
 
+    <div [ngSwitch]="pet">
         <ion-list *ngSwitchCase=" 'keuangan' ">
             <ion-refresher (ionRefresh)="doRefresh($event)">
               <ion-refresher-content></ion-refresher-content>
