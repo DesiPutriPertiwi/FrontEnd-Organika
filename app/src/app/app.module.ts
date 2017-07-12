@@ -28,6 +28,7 @@ import {TambahBerandaPage } from '../pages/tambah-beranda/tambah-beranda';
 import { EditProfilPage} from '../pages/edit-profil/edit-profil';
 import { GantipaswordPage} from '../pages/gantipasword/gantipasword';
 import {VerifikasiAnggotaPage} from '../pages/verifikasi-anggota/verifikasi-anggota';
+import {LupapaswordPage} from '../pages/lupapasword/lupapasword';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import {VerifikasiAnggotaPage} from '../pages/verifikasi-anggota/verifikasi-angg
     RegistrasiAnggotaPage,
     VerifikasiAnggotaPage,
     MulaiPage,
+    LupapaswordPage,
   ],
   imports: [
   //  NgCalendarModule,
@@ -82,6 +84,7 @@ import {VerifikasiAnggotaPage} from '../pages/verifikasi-anggota/verifikasi-angg
     RegistrasiAnggotaPage,
     VerifikasiAnggotaPage,
     MulaiPage,
+    LupapaswordPage,
   ],
   providers: [
     {provide: Storage, useClass: IonicErrorHandler}, 
