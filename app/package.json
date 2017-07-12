@@ -21,7 +21,11 @@
     "@angular/platform-server": "2.4.8",
     "@ionic-native/camera": "^3.12.1",
     "@ionic-native/core": "^3.6.1",
+    "@ionic-native/local-notifications": "^4.0.0",
+    "@ionic-native/push": "^4.0.0",
+    "@ionic-native/splash-screen": "^4.0.0",
     "@ionic/storage": "1.1.7",
+    "cordova-plugin-splashscreen": "^4.0.3",
     "ionic-angular": "2.2.0",
     "ionic-native": "2.4.1",
     "ionicons": "3.0.0",
@@ -42,5 +46,10 @@
     "cordova-plugin-splashscreen"
   ],
   "cordovaPlatforms": [],
-  "description": "organika: An Ionic project"
+  "description": "organika: An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-splashscreen": {}
+    }
+  }
 }

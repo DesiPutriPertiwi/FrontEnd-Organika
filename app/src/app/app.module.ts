@@ -1,6 +1,8 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { KegiatanPage } from '../pages/kegiatan/kegiatan';
 import { ProfilPage } from '../pages/profil/profil';
 import { BerandaPage } from '../pages/beranda/beranda';
@@ -76,7 +78,8 @@ import { GantipaswordPage} from '../pages/gantipasword/gantipasword';
   providers: [
     {provide: Storage, useClass: IonicErrorHandler}, 
     Auth,
-    Camera
+    Camera,
+    SplashScreen
   ]
 })
 export class AppModule {}

@@ -15,18 +15,30 @@ import { RegistrasiPage } from '../registrasi/registrasi';
   templateUrl: 'login.html'
 })
 export class LoginPage {
+  /*splash = true;
+  tabBarElement : any;
+*/
   login: {username?: string, password?: string} = {};
   submitted = false;
   
-  headers = new Headers({ 
-                'Content-Type': 'application/json'});
+  headers = new Headers({ 'Content-Type': 'application/json'});
   options = new RequestOptions({ headers: this.headers});
   
   constructor(
     public navCtrl: NavController, 
     public auth: Auth,
-    public http: Http) { }
-
+    public http: Http) { 
+    //this.tabBarElement = document.querySelector('.tabbar');
+  }
+/*
+  ionViewDidLoad(){
+    this.tabBarElement.style.display ='none';
+      setTimeout(() => {
+         this.splash = false;
+        this.tabBarElement.style.display ='flex';
+      }, 4000);
+    }
+*/
   onLogin(form: NgForm) {
     this.submitted = true;
 
