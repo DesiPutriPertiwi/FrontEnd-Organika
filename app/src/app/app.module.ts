@@ -8,7 +8,7 @@ import { ProfilPage } from '../pages/profil/profil';
 import { BerandaPage } from '../pages/beranda/beranda';
 import { UndanganPage } from '../pages/undangan/undangan';
 import { TabsPage } from '../pages/tabs/tabs';
-import {LeaderboardPage} from '../pages/leaderboard/leaderboard';
+import { LeaderboardPage} from '../pages/leaderboard/leaderboard';
 import { MulaiPage } from '../pages/mulai/mulai';
 import { LoginPage } from '../pages/login/login';
 import { Auth } from '../providers/auth';
@@ -52,6 +52,7 @@ import {VerifikasiAnggotaPage} from '../pages/verifikasi-anggota/verifikasi-angg
     GantipaswordPage,
     RegistrasiAnggotaPage,
     VerifikasiAnggotaPage,
+    MulaiPage,
   ],
   imports: [
   //  NgCalendarModule,
@@ -80,6 +81,7 @@ import {VerifikasiAnggotaPage} from '../pages/verifikasi-anggota/verifikasi-angg
     GantipaswordPage,
     RegistrasiAnggotaPage,
     VerifikasiAnggotaPage,
+    MulaiPage,
   ],
   providers: [
     {provide: Storage, useClass: IonicErrorHandler}, 

@@ -9,7 +9,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ProfilPage} from '../pages/profil/profil';
 import { GantipaswordPage} from '../pages/gantipasword/gantipasword';
 import { UndanganPage } from '../pages/undangan/undangan';
-
+import { MulaiPage} from '../pages/mulai/mulai';
 
 export interface PageInterface {
   title: string;
@@ -26,7 +26,7 @@ export interface PageInterface {
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = LoginPage;
+  rootPage = MulaiPage;
 
   @ViewChild(Nav) nav: Nav;
 
