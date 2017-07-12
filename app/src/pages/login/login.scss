@@ -16,11 +16,19 @@ page-user {
     margin-bottom: 0;
   }
 
-    .login-box {
+  .login-box {
       background: #FFFFFF;
       padding: 10px 10px 0px 10px;
       margin-top: 30px;
-    }
+  }
+
+  .button-box{
+    text-align: center;
+  }
+
+  $color: (
+    secondary: #0000ff
+  )
 /*
   #custom-overlay {
   position: fixed;

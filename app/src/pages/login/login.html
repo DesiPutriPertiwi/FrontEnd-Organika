@@ -27,13 +27,14 @@
         </p>
       </ion-list>
 
-      <ion-row responsive-sm>
+      <ion-row responsive-sm >
         <ion-col>
           <button ion-button (click)="onLogin(loginForm)" type="submit" block>Login</button>
         </ion-col>
         <ion-col>
           <button ion-button (click)="onSignup()" color="light" block>Signup</button>
         </ion-col>
+        <div class="button-box"><span ion-text color="secondary"  (click)="lupaPass()">Lupa password?</span></div>
       </ion-row>
     </form>
   </div>

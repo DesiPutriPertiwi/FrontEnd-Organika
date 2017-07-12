@@ -7,6 +7,7 @@ import { Auth } from '../../providers/auth';
 
 import { TabsPage } from '../tabs/tabs';
 import { RegistrasiPage } from '../registrasi/registrasi';
+import { LupapaswordPage} from '../lupapasword/lupapasword';
 // import { Storage } from '@ionic-storage';
 
 
@@ -50,6 +51,10 @@ export class LoginPage {
       /*  }
       });
     }*/
+  }
+
+  lupaPass(){
+    this.navCtrl.push(LupapaswordPage);
   }
 
   onSignup() {
