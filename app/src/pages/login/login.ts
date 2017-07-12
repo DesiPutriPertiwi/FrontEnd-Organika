@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Http,Headers,RequestOptions } from '@angular/http';
-import { NavController } from 'ionic-angular';
+import { NavController,LoadingController } from 'ionic-angular';
 
 import { Auth } from '../../providers/auth';
 
@@ -27,6 +27,7 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController, 
     public auth: Auth,
+<<<<<<< HEAD
     public http: Http) { 
     //this.tabBarElement = document.querySelector('.tabbar');
   }
@@ -39,8 +40,17 @@ export class LoginPage {
       }, 4000);
     }
 */
+=======
+    public http: Http,
+    public loadCtrl: LoadingController
+    ) { }
+
+>>>>>>> d3ec162c99dc7d9e70c200d92876e42aeb05e46c
   onLogin(form: NgForm) {
     this.submitted = true;
+    let loading = this.loadCtrl.create({
+        content: 'Tunggu sebentar...'
+    });
 
    /* if (form.valid) {
       // this.auth.login(this.login.username);

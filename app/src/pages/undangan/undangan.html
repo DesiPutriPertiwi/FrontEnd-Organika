@@ -1,13 +1,8 @@
-<!--
-  Generated template for the Undangan page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
-      <ion-icon name="contact"></ion-icon>
+      <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Daftar Organisasi</ion-title>
   </ion-navbar>
@@ -15,62 +10,38 @@
 
 <ion-content>
 	<div class= "regis-box">
-		<form #registrasiForm="ngForm" novalidate>
-      <ion-item>
-					<ion-label stacked color="primary">Nama Organisasi</ion-label>
-					<ion-input [(ngModel)]="organisasi.nama_organisasi" placeholder="Nama Organisasi" name="n_orgaisasi" type="text" #n_orgaisasi="ngModel" required></ion-input>
-				</ion-item>
-				<p ion-text [hidden]=" submitted== false" color="danger" padding-left>Silahkan isi Nama Organiasi</p>
+		<!--form #undanganForm="ngForm" (ngSubmit)="onSubmit()"-->
+      <ion-list>
+        <ion-item>
+            <ion-label stacked color="primary">Nama Organisasi</ion-label>
+            <ion-input [(ngModel)]="organisasi.nama_organisasi" placeholder="Nama Organisasi" name="n_orgaisasi" type="text" #n_orgaisasi="ngModel" required></ion-input>
+        </ion-item>
+        <p ion-text [hidden]=" submitted== false" color="danger" padding-left>Silahkan isi Nama Organiasi</p>
   
-    	<ion-list> 
-        <ion-label> Keanggotaan </ion-label>
-        <div>
-          <ion-item>
-            <ion-label stacked color="primary">Nama Anggota</ion-label>
-            <ion-input [(ngModel)]="user.nama" placeholder="Nama Anggota" name="nama" type="text" #nama="ngModel" required></ion-input>
-          </ion-item>
-          <p ion-text [hidden]=" submitted== false" color="danger" padding-left>Silahkan isi Nama Lengkap</p>
+        <ion-item>
+            <ion-label stacked color="primary">Deskripsi Organisasi</ion-label>
+            <ion-textarea [(ngModel)]="organisasi.deskripsi" placeholder="Masukkan Deskripsi Organisasi" name="message" #message="ngModel" rows="3" required ></ion-textarea>
+        </ion-item>
+        <p ion-text [hidden]=" submitted== false" color="danger" padding-left>Silahkan isi Nama Lengkap</p>
 
-          <ion-item>
-            <ion-label stacked color="primary">Email</ion-label>
-            <ion-input [(ngModel)]="user.email" placeholder="Email" name="email" type="email" #email="ngModel" required></ion-input>
-          </ion-item>
-          <p ion-text [hidden]="submitted== false" color="danger" padding-left>Silahkan isi Email</p>
-
-          <ion-item>
-            <ion-label stacked color="primary">Status Keanggotaan</ion-label>
-              <ion-select [(ngModel)]="jenis">
-                <ion-option value="wakil">Wakil Ketua</ion-option>
-                <ion-option value="bendahara">Bendahara</ion-option>
-                <ion-option value="sekretaris">Sekretaris</ion-option>
-                <ion-option value="pengeluaran">Kadiv</ion-option>
+        <ion-item>
+            <ion-label stacked color="primary">Jumlah Anggota</ion-label>
+              <ion-select [(ngModel)]="organisasi.jumlah">
+                <ion-option value="1-10 orang">1-10 Orang</ion-option>
+                <ion-option value="11-30 Orang">11-30 Orang</ion-option>
+                <ion-option value="31-50 Orang">31-50 Orang</ion-option>
+                <ion-option value="51-100 Orang">51-100 Orang</ion-option>
+                <ion-option value="101-150 Orang">101-150 Orang</ion-option>
+                <ion-option value="151-200 Orang">151-200 Orang</ion-option>
+                <ion-option value="251-250 Orang">201-250 Orang</ion-option>
               </ion-select>
-          </ion-item>
-        </div>
+        </ion-item>
 
-        <div>
-          <ion-item>
-            <ion-label stacked color="primary">Nama Anggota</ion-label>
-            <ion-input [(ngModel)]="user.nama" placeholder="Nama Anggota" name="nama" type="text" #nama="ngModel" required></ion-input>
-          </ion-item>
-          <p ion-text [hidden]=" submitted== false" color="danger" padding-left>Silahkan isi Nama Lengkap</p>
-
-          <ion-item>
-            <ion-label stacked color="primary">Email</ion-label>
-            <ion-input [(ngModel)]="user.email" placeholder="Email" name="email" type="email" #email="ngModel" required></ion-input>
-          </ion-item>
-          <p ion-text [hidden]="submitted== false" color="danger" padding-left>Silahkan isi Email</p>
-
-          <ion-item>
-            <ion-label stacked color="primary">Status Keanggotaan</ion-label>
-              <ion-select [(ngModel)]="jenis">
-                <ion-option value="wakil">Wakil Ketua</ion-option>
-                <ion-option value="bendahara">Bendahara</ion-option>
-                <ion-option value="sekretaris">Sekretaris</ion-option>
-                <ion-option value="pengeluaran">Kadiv</ion-option>
-              </ion-select>
-          </ion-item>
-        </div>
+        <ion-item>
+            <ion-label stacked color="primary">URL Organisasi</ion-label>
+            <ion-input [(ngModel)]="organisasi.url" placeholder="URL_Organisasi.organika.com" name="url" type="text" #url="ngModel" required></ion-input>
+        </ion-item>
+        <p ion-text [hidden]=" submitted== false" color="danger" padding-left>Silahkan isi Nama Lengkap</p>
 
 			</ion-list>
 
@@ -80,6 +51,6 @@
 				</ion-col>
 			</ion-row>
 
-		</form>
+		<!--/form-->
 	</div>
 </ion-content>

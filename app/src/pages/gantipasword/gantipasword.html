@@ -1,9 +1,4 @@
-<!--
-  Generated template for the Gantipasword page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+<!--Ganti Password-->
 <ion-header>
 
   <ion-navbar>
@@ -40,10 +35,10 @@
 			</ion-item>
 
 			<p ion-text *ngIf="reTypePassword == newPassword && reTypePass.valid" color="secondary" padding-left>
-				Password match
+				Password cocok
 			</p>
 			<p ion-text *ngIf="reTypePassword != newPassword && reTypePass.valid && newPass.valid" color="danger" padding-left>
-				Password doesn't match
+				Password tidak cocok
 			</p>
 		</ion-list>
 	</form>

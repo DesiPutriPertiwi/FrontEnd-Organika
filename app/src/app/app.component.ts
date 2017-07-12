@@ -8,7 +8,7 @@ import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ProfilPage} from '../pages/profil/profil';
 import { GantipaswordPage} from '../pages/gantipasword/gantipasword';
-
+import { UndanganPage } from '../pages/undangan/undangan';
 
 
 export interface PageInterface {

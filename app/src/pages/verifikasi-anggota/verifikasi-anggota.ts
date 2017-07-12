@@ -2,20 +2,19 @@ import { Component } from '@angular/core';
 import { NavController, App, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import { Auth } from '../../providers/auth';
-import { LoginPage} from '../login/login';
-import { UndanganPage} from '../undangan/undangan';
+import { TabsPage} from '../tabs/tabs';
 
 /*
-  Generated class for the VerifikasiAkun page.
+  Generated class for the VerifikasiAnggota page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-verifikasi-akun',
-  templateUrl: 'verifikasi-akun.html'
+  selector: 'page-verifikasi-anggota',
+  templateUrl: 'verifikasi-anggota.html'
 })
-export class VerifikasiAkunPage {
+export class VerifikasiAnggotaPage {
   headers = new Headers({ 'Content-Type': 'application/json'});
   options = new RequestOptions({ headers: this.headers});
   email: string;
@@ -33,12 +32,8 @@ export class VerifikasiAkunPage {
       //this.username = data.username.data;
       this.email = data.email;
     }
-  /*login(){
-    this.app.getRootNav().setRoot(LoginPage);
-  }*/
-
-  regisOrganisasi(){
-    this.navCtrl.push(UndanganPage);
+  login(){
+    this.app.getRootNav().setRoot(TabsPage);
   }
 
   reSendVerifikasi(){

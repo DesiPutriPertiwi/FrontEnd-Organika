@@ -51,9 +51,9 @@ export class EditProfilPage {
 
   onUpdate(form: NgForm) {
     this.submitted = true;
-   /* let loading = this.loadCtrl.create({
+    let loading = this.loadCtrl.create({
         content: 'Tunggu sebentar...'
-    });*/
+    });
     if (form.valid) {
     //	loading.present();
       let param = JSON.stringify({
