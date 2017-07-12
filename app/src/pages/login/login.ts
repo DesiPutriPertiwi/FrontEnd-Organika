@@ -15,9 +15,7 @@ import { RegistrasiPage } from '../registrasi/registrasi';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  /*splash = true;
-  tabBarElement : any;
-*/
+
   login: {username?: string, password?: string} = {};
   submitted = false;
   
@@ -27,25 +25,10 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController, 
     public auth: Auth,
-<<<<<<< HEAD
-    public http: Http) { 
-    //this.tabBarElement = document.querySelector('.tabbar');
-  }
-/*
-  ionViewDidLoad(){
-    this.tabBarElement.style.display ='none';
-      setTimeout(() => {
-         this.splash = false;
-        this.tabBarElement.style.display ='flex';
-      }, 4000);
-    }
-*/
-=======
     public http: Http,
     public loadCtrl: LoadingController
     ) { }
 
->>>>>>> d3ec162c99dc7d9e70c200d92876e42aeb05e46c
   onLogin(form: NgForm) {
     this.submitted = true;
     let loading = this.loadCtrl.create({
