@@ -17,12 +17,12 @@ export class MulaiPage {
     public navCtrl: NavController,
     public menu: MenuController,
     public storage: Storage
-  ) { } 
+    ) { } 
 
   startApp() {
     this.navCtrl.push(LoginPage).then(() => {
       this.storage.set('hasSeenTutorial', 'true');
-    })
+    });
   }
 
   onSlideChangeStart(slider: Slides) {
