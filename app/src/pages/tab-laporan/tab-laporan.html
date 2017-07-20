@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title text-center><h4>Laporan</h4></ion-title>
+    <ion-title text-center><h4>Laporan Keuangan</h4></ion-title>
         <ion-buttons end>
           <button ion-button icon-only (click)="presentPopover($event)">
             <ion-icon name="more"></ion-icon>
@@ -8,136 +8,52 @@
         </ion-buttons>
   </ion-navbar>
   
-  <ion-toolbar no-border-top>
-    <ion-segment [(ngModel)]="pet">
-        <ion-segment-button value="keuangan">Keuangan</ion-segment-button>
-        <ion-segment-button value="dokumentasi">Dokumentasi</ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <!--
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Tarik untuk memuat ulang" refreshingSpinner="circles" refreshingText="Memuat..."> </ion-refresher-content>
-    </ion-refresher>
-    <div text-center *ngIf="!posts">
-        <ion-spinner></ion-spinner>
-        <p> Memuat data... </p>
-    </div>
-    -->
-
-    <div [ngSwitch]="pet">
-        <ion-list *ngSwitchCase=" 'keuangan' ">
-            <ion-refresher (ionRefresh)="doRefresh($event)">
-              <ion-refresher-content></ion-refresher-content>
-            </ion-refresher>
-
-            <ion-list #scheduleList [hidden]="shownSessions === 0">
-
-              <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
-
-                <ion-item-divider sticky>
-                  <ion-label>
-                    {{group.time}}
-                  </ion-label>
-                </ion-item-divider>
-
-                <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="session.tracks[0] | lowercase" [hidden]="session.hide">
-
-                  <button ion-item (click)="goToSessionDetail(session)">
-                    <h3>{{session.name}}</h3>
-                    <p>
-                      {{session.timeStart}} &mdash;
-                      {{session.timeEnd}}:
-                      {{session.location}}
-                    </p>
-                  </button>
-
-                  <ion-item-options>
-                    <button ion-button color="favorite" (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">
-                      Favorite
-                    </button>
-                    <button ion-button color="danger" (click)="removeFavorite(slidingItem, session, 'Remove Favorite')" *ngIf="segment === 'favorites'">
-                      Remove
-                    </button>
-                  </ion-item-options>
-
-                </ion-item-sliding>
-
-              </ion-item-group>
-
-            </ion-list>
-
-            <ion-list-header [hidden]="shownSessions > 0">
-                No Sessions Found
-            </ion-list-header>
-            <ion-fab right bottom>
-                  <button ion-fab (click)="goToKeuangan()"><ion-icon name="create"></ion-icon></button>
-            </ion-fab>
-        </ion-list>
-        
-
-        <ion-list *ngSwitchCase=" 'dokumentasi' ">
-            <ion-refresher (ionRefresh)="doRefresh($event)">
-              <ion-refresher-content></ion-refresher-content>
-            </ion-refresher>
-
-            <ion-list #scheduleList [hidden]="shownSessions === 0">
-
-              <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
-
-                <ion-item-divider sticky>
-                  <ion-label>
-                    {{group.time}}
-                  </ion-label>
-                </ion-item-divider>
-
-                <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="session.tracks[0] | lowercase" [hidden]="session.hide">
-
-                  <button ion-item (click)="goToSessionDetail(session)">
-                    <h3>{{session.name}}</h3>
-                    <p>
-                      {{session.timeStart}} &mdash;
-                      {{session.timeEnd}}:
-                      {{session.location}}
-                    </p>
-                  </button>
-
-                  <ion-item-options>
-                    <button ion-button color="favorite" (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">
-                      Favorite
-                    </button>
-                    <button ion-button color="danger" (click)="removeFavorite(slidingItem, session, 'Remove Favorite')" *ngIf="segment === 'favorites'">
-                      Remove
-                    </button>
-                  </ion-item-options>
-
-                </ion-item-sliding>
-
-              </ion-item-group>
-
-            </ion-list>
-
-            <ion-list-header [hidden]="shownSessions > 0">
-                No Sessions Found
-            </ion-list-header>
-            <ion-fab right bottom>
-                  <button ion-fab (click)="goToDokumentasi()"><ion-icon name="create"></ion-icon></button>
-            </ion-fab>
-        </ion-list>
-    </div>
-
-    <!--ion-fab right bottom>
-        <button ion-fab color="primary"><ion-icon name="create"></ion-icon></button>
-        <ion-fab-list side="top">
-            <button ion-fab (click)="goToKeuangan()"><ion-icon name="paper"></ion-icon></button>
-            <button ion-fab (click)="goToDokumentasi()"><ion-icon name="image"></ion-icon></button>
-        </ion-fab-list>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Tarik untuk memuat ulang"
+      refreshingSpinner="circles"
+      refreshingText="Memuat...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div text-center *ngIf="!lapor">
+    <ion-spinner></ion-spinner>
+    <p>
+      Memuat data...
+    </p>
+  </div>
+  <div text-center *ngIf="httpErr">
+    <button ion-button (click)="getData()">Muat Ulang</button>
+  </div>
+    <ion-list>
+        <div *ngFor="let lap of lapor">
+            <ion-card >
+                <ion-card-header> <b class="judul">{{lap.jumlah}}</b>
+                    </ion-card-header>
+                <ion-card-content>
+                    <p class="text" [innerHTML]="lap.keterangan"></p>
+                    <br />
+                    <ion-badge>
+                          {{lap.namadivisi}}
+                    </ion-badge>
+                     <ion-badge>
+                          {{lap.namakegiatan}}
+                    </ion-badge>
+                    <ion-badge>
+                          {{lap.timestamp}}
+                    </ion-badge>
+                    <ion-badge>
+                         {{lap.jenis}}</ion-badge>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </ion-list>
+    
+    
+    <ion-fab right bottom>
+      <button ion-fab (click)="goToBeranda()"><ion-icon name="create"></ion-icon></button>
     </ion-fab>
-    <!--
-    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-        <ion-infinite-scroll-content loadingText="Memuat data..."></ion-infinite-scroll-content>
-    </ion-infinite-scroll>
-    -->
 </ion-content>

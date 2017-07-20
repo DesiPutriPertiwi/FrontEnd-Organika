@@ -38,6 +38,12 @@
 					<ion-input [(ngModel)]="user.password" placeholder="Password" name="password" type="password" #password="ngModel" required></ion-input>
 				</ion-item>
 				<p ion-text [hidden]=" submitted== false" color="danger" padding-left>Silahkan isi Password</p> 
+                
+                
+                <ion-item>
+					<ion-label stacked color="primary">Kode Organisasi</ion-label>
+					<ion-input [(ngModel)]="user.kodeorganisasi" placeholder="misal : AE2B3" name="kodeorganisasi" type="text" #kodeorganisasi="ngModel" required></ion-input>
+				</ion-item>
 
 			</ion-list>
 

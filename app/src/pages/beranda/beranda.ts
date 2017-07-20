@@ -35,7 +35,6 @@ export class BerandaPage {
 
 
   doRefresh(refresher) {
-    this.limit =0;
     setTimeout(() => {
       this.getData();
       refresher.complete();
@@ -43,24 +42,13 @@ export class BerandaPage {
   }
 
   getData() {
-    this.http.get('localhost:8000/lihat-post').subscribe(res => {
+    this.http.get('http://organika.agri.web.id/beranda.php').subscribe(res => {
       this.posts = res.json();
       this.httpErr = false;
     }, err => {this.showAlert(err.status)});
   }
 
-  doInfinite(infiniteScroll) {
-
-    setTimeout(() => {
-      this.limit = this.limit+5;
-
-      this.http.get('localhost:8000/lihat-post').subscribe(res => {
-        this.posts = this.posts.concat(res.json());
-      });
-
-      infiniteScroll.complete();
-    }, 500);
-   }
+  
 
   baca(idArtikel){
     //this.navCtrl.push(ArtikelBacaPage, idArtikel);

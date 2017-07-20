@@ -3,7 +3,7 @@ import { NavController, NavParams, ToastController, LoadingController} from 'ion
 import { Http, Headers,RequestOptions} from '@angular/http';
 import { NgForm } from '@angular/forms'
 import { Auth } from'../../providers/auth';
-import { VerifikasiAkunPage } from '../verifikasi-akun/verifikasi-akun';
+import { LoginPage } from '../login/login';
 
 /*
   Generated class for the Registrasi page.
@@ -43,7 +43,7 @@ export class RegistrasiPage {
     let loading = this.loadCtrl.create({
         content: 'Tunggu sebentar...'
     });
-    this.navCtrl.push(VerifikasiAkunPage);
+    this.navCtrl.push(LoginPage);
   }
 
   showError(err: any){

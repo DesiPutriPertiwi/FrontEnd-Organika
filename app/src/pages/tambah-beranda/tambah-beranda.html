@@ -17,11 +17,6 @@
       <p ion-text [hidden]="message.valid || submitted === false" color="danger" padding-left>Subject is required</p>
 
     <ion-item>
-      <ion-label stacked color="primary">Tanggal</ion-label>
-      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="month" placeholder="MMM DD YYYY" ></ion-datetime>
-    </ion-item>
- 
-    <ion-item>
         <ion-label stacked color="primary">Catatan</ion-label>
         <ion-textarea [(ngModel)]="catatan" placeholder="Masukkan Catatan" name="message"#message="ngModel" rows="3" required ></ion-textarea>
       </ion-item>
