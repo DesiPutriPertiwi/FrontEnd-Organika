@@ -40,7 +40,6 @@ export class TabLaporanPage {
   goToDokumentasi(){
       this.navCtrl.push(DokumentasiPage);
   }
-
 doRefresh(refresher) {
     setTimeout(() => {
       this.getData();
