@@ -29,7 +29,7 @@
   </div>
     <ion-list>
         <div *ngFor="let post of posts">
-            <ion-card >
+            <ion-card (click)="detilPos()">
                 <ion-card-header> <b class="judul">{{post.subjek}}</b>
                     <p class="info">oleh : <b>{{post.pengguna}}</b>
                     <hr> </ion-card-header>

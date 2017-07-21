@@ -4,7 +4,6 @@ import { MyApp } from './app.component';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { Storage } from '@ionic/storage';
-
 import { KegiatanPage } from '../pages/kegiatan/kegiatan';
 import { ProfilPage } from '../pages/profil/profil';
 import { BerandaPage } from '../pages/beranda/beranda';
@@ -17,7 +16,6 @@ import { Auth } from '../providers/auth';
 import { RegistrasiPage} from '../pages/registrasi/registrasi';
 import { RegistrasiAnggotaPage} from '../pages/registrasi-anggota/registrasi-anggota';
 import { EditKeluarPage} from '../pages/edit-keluar/edit-keluar';
-
 import { LaporanPage } from '../pages/laporan/laporan';
 import { DokumentasiPage } from '../pages/dokumentasi/dokumentasi';
 import { TabLaporanPage } from '../pages/tab-laporan/tab-laporan';
@@ -56,6 +54,7 @@ import {LupapaswordPage} from '../pages/lupapasword/lupapasword';
     VerifikasiAnggotaPage,
     MulaiPage,
     LupapaswordPage,
+   
   ],
   imports: [
   //  NgCalendarModule,

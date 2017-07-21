@@ -12,19 +12,19 @@
   <ion-list>
     <ion-item>
         <ion-label stacked color="primary">Subject</ion-label>
-        <ion-input [(ngModel)]="subject" placeholder="Masukkan Subject" name="message"#message="ngModel" required ></ion-input>
+        <ion-input [(ngModel)]="subjek" placeholder="Masukkan Subjek" name="message"#message="ngModel" required ></ion-input>
       </ion-item>
       <p ion-text [hidden]="message.valid || submitted === false" color="danger" padding-left>Subject is required</p>
 
     <ion-item>
         <ion-label stacked color="primary">Catatan</ion-label>
-        <ion-textarea [(ngModel)]="catatan" placeholder="Masukkan Catatan" name="message"#message="ngModel" rows="3" required ></ion-textarea>
+        <ion-textarea [(ngModel)]="isi" placeholder="Masukkan Isi" name="message"#message="ngModel" rows="3" required ></ion-textarea>
       </ion-item>
-      <p ion-text [hidden]="message.valid || submitted === false" color="danger" padding-left>Keterangan is required</p>
+      <p ion-text [hidden]="message.valid || submitted === false" color="danger" padding-left>Mohon Lengkapi isinya</p>
   </ion-list>
 
   <div padding>
-      <button ion-button type="submit" block (click)="uploadLaporan()">Kirim</button>
+      <button ion-button type="submit" block (click)="kirim()">Kirim</button>
   </div>
 
 </ion-content>

@@ -12,16 +12,19 @@ import { BerandaPage } from '../beranda/beranda';
 export class TambahBerandaPage {
   picture: string;
   submitted = false;
-    subject="";
-    catatan="";
+  public pengguna_id_pengguna=1;
+  public subjek:string;
+  public isi="";
+  public divisi_organisasi_id_organisasi=2;
+  public divisi_id_Divisi=1;
 
   constructor(public popoverCtrl: PopoverController,public actionSheetCtrl: ActionSheetController,public camera: Camera, public http: Http,
     public navCtrl: NavController
     ) { }
 
-  uploadLaporan(){
-     let post=JSON.stringify({subjek: this.subject, isi: this.catatan});
-      this.http.post('http://organika.agri.web.id/tulis-post.php',post).subscribe(res=>{
+  kirim(){
+     let post=JSON.stringify({subjek:this.subjek,isi:this.isi,Divisi_id_divisi:this.divisi_id_Divisi,Divisi_organisasi_id_organisasi:this.divisi_organisasi_id_organisasi,pengguna_id_pengguna:this.pengguna_id_pengguna});
+      this.http.post('http://organika.agri.web.id/api/api.php/ruang_diskusi', post).subscribe(res=>{
           let data = res.json();
           if(data.status){
               console.log('Berhasil');
@@ -34,4 +37,6 @@ export class TambahBerandaPage {
       
     this.navCtrl.push(BerandaPage);
   }
-}
+
+   
+  }
